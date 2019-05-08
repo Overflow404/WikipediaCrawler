@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DuplicateFilter implements UrlFilter {
-
     private Set<URL> visitedUrls;
 
     public DuplicateFilter() {
@@ -17,7 +16,6 @@ public class DuplicateFilter implements UrlFilter {
         if (visitedUrls.contains(url)) {
             return false;
         }
-
         visitedUrls.add(url);
         return true;
     }

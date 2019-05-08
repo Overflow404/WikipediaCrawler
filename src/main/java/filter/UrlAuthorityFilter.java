@@ -3,7 +3,6 @@ package filter;
 import java.net.URL;
 
 public class UrlAuthorityFilter implements UrlFilter {
-
     private String authority;
 
     public UrlAuthorityFilter(URL url) {

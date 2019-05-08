@@ -3,7 +3,6 @@ package parser;
 import java.util.List;
 
 public class Page {
-
     private String title;
     private List<String> links;
 
@@ -19,5 +18,4 @@ public class Page {
     public List<String> getLinks() {
         return links;
     }
-
 }

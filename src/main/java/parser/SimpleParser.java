@@ -4,11 +4,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleParser implements Parser {
-
     private final static String CSS_QUERY_SELECTOR = "a";
     private final static String ATTRIBUTE_KEY = "href";
 

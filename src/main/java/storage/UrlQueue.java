@@ -10,7 +10,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 public class UrlQueue implements UrlStorage {
-
     private BlockingQueue<URL> urls;
     private List<UrlFilter> filters;
 

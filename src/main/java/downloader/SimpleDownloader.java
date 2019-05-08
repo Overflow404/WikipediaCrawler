@@ -12,18 +12,15 @@ import org.apache.http.impl.client.HttpClients;
 import java.net.URL;
 
 public class SimpleDownloader implements Downloader {
-
     private HttpClient client;
     private ResponseHandler<String> handler;
 
     public SimpleDownloader() {
         client = HttpClients.custom()
                 .setDefaultRequestConfig(RequestConfig.custom()
-                .setCookieSpec(CookieSpecs.STANDARD).build())
+                        .setCookieSpec(CookieSpecs.STANDARD).build())
                 .build();
-
         handler = new BasicResponseHandler();
-
     }
 
     @Override

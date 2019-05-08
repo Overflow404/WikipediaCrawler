@@ -1,7 +1,6 @@
 package downloader;
 
 public class DownloadResult {
-
     static DownloadResult failure(String reason) {
         return new DownloadResult(null, Result.FAILURE, reason);
     }

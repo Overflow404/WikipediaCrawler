@@ -5,19 +5,16 @@ import downloader.DownloadResult.Result;
 import downloader.Downloader;
 import downloader.SimpleDownloader;
 import link.LinkParser;
-import parser.SimpleParser;
 import parser.Page;
 import parser.Parser;
+import parser.SimpleParser;
 import storage.UrlStorage;
 
 import java.net.URL;
 import java.util.List;
 
-
 class PageHarvester implements Runnable {
-
     private boolean stop = false;
-
     private UrlStorage storage;
     private Downloader downloader;
     private Parser parser;
@@ -42,16 +39,13 @@ class PageHarvester implements Runnable {
 
     private void processUrl(URL pageUrl) {
         DownloadResult result = downloader.download(pageUrl);
-
         if (result.getResult() == Result.FAILURE) {
             System.out.println("Failed downloading url " + pageUrl + " with reason " + result.getFailureReason());
             return;
         }
         String content = result.getContent();
         Page page = parser.parse(content);
-
         List<String> links = page.getLinks();
-
         for (String link : links) {
             if (linkParser.isValid(link)) {
                 try {
@@ -62,7 +56,6 @@ class PageHarvester implements Runnable {
                 }
             }
         }
-
         System.out.println(pageUrl + ": " + page.getTitle());
     }
 
